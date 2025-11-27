@@ -1,0 +1,350 @@
+
+
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Custom triple-line E for the logo */
+.logo-e {
+    position: relative;
+    display: inline-block;
+    width: 0.7em;
+    height: 0.9em;
+    margin: 0 0.035em;
+    vertical-align: -0.06em;
+}
+
+.logo-e::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.12em;
+    background: currentColor;
+    box-shadow: 0 0.32em 0 currentColor, 0 0.64em 0 currentColor;
+    border-radius: 999px;
+}
+
+/* Noise Overlay */
+.bg-noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+}
+
+/* Utilities */
+.text-balance {
+    text-wrap: balance;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Animation Utilities for JS triggers */
+.opacity-100 {
+    opacity: 1;
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+.translate-y-0 {
+    transform: translateY(0);
+}
+
+.translate-y-12 {
+    transform: translateY(3rem);
+}
+
+.translate-y-10 {
+    transform: translateY(2.5rem);
+}
+
+.translate-x-0 {
+    transform: translateX(0);
+}
+
+.-translate-x-12 {
+    transform: translateX(-3rem);
+}
+
+.translate-x-12 {
+    transform: translateX(3rem);
+}
+
+.-translate-x-10 {
+    transform: translateX(-2.5rem);
+}
+
+.translate-x-10 {
+    transform: translateX(2.5rem);
+}
+
+/* Header Scrolled State classes (applied via JS) */
+.header-scrolled {
+    top: 1rem !important;
+}
+
+.header-container-scrolled {
+    width: 95% !important;
+    max-width: 80rem !important;
+    /* max-w-7xl */
+    background-color: transparent !important;
+    /* Transparent background */
+    backdrop-filter: blur(16px) !important;
+    /* Glass blur effect */
+    border-radius: 1rem !important;
+    /* rounded-2xl */
+    padding-top: 0.75rem !important;
+    /* py-3 */
+    padding-bottom: 0.75rem !important;
+    padding-left: 1.5rem !important;
+    /* px-6 */
+    padding-right: 1.5rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    /* border-white/10 */
+    box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Mobile Menu Light Theme Utility */
+.mobile-menu-light {
+    background-color: rgba(255, 255, 255, 0.98);
+}
+
+.mobile-menu-light .mobile-link {
+    color: #02181C !important; /* prosper-dark (Dark Teal) */
+}
+
+/* Tabs active state */
+.tab-btn.active {
+    background-color: #02181C; /* prosper-dark */
+    color: #84CC16; /* prosper-accent (Lime) */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+}
+
+/* Button Shimmer */
+@keyframes shimmer {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Accent Shine Text */
+@keyframes accentShine {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+@keyframes flagWave {
+    0% {
+        background-position: 0% 50%;
+        transform: skewX(0deg);
+    }
+    25% {
+        background-position: 50% 45%;
+        transform: skewX(1deg) translateY(-2px);
+    }
+    50% {
+        background-position: 100% 55%;
+        transform: skewX(-1deg) translateY(1px);
+    }
+    75% {
+        background-position: 50% 45%;
+        transform: skewX(1deg) translateY(-1px);
+    }
+    100% {
+        background-position: 0% 50%;
+        transform: skewX(0deg);
+    }
+}
+
+@keyframes heroShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    80% {
+        background-position: 0% 50%;
+    }
+    90% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hero-title {
+    background-size: 220% auto;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+    animation: heroShine 18s ease-in-out infinite;
+}
+
+/* --- MODERN PREMIUM BUTTONS (Matte Lime/Emerald Finish) --- */
+
+.btn-premium-accent {
+    /* Smooth modern matte gradient: Lime to Emerald */
+    background: linear-gradient(135deg, #84CC16 0%, #65A30D 50%, #10B981 100%);
+    color: #02181C;
+    border: none;
+    /* Diffuse neon shadow */
+    box-shadow: 0 10px 25px -5px rgba(132, 204, 22, 0.4);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 1;
+}
+
+/* Subtle inner glow for depth */
+.btn-premium-accent::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.2), transparent 60%);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.btn-premium-accent:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px -5px rgba(132, 204, 22, 0.5);
+    /* Brighten slightly on hover */
+    filter: brightness(1.05);
+}
+
+.btn-premium-outline {
+    background: rgba(255, 255, 255, 0.03);
+    color: #84CC16;
+    border: 1px solid rgba(132, 204, 22, 0.4);
+    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    backdrop-filter: blur(8px);
+}
+
+.btn-premium-outline:hover {
+    background: rgba(132, 204, 22, 0.1);
+    border-color: #84CC16;
+    color: #FFF;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px -5px rgba(132, 204, 22, 0.2);
+}
+
+/* Dark variant for Light Backgrounds */
+.btn-premium-outline-dark {
+    background: transparent;
+    color: #02181C;
+    border: 1px solid rgba(2, 24, 28, 0.3); /* Dark border */
+    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn-premium-outline-dark:hover {
+    background: #02181C;
+    border-color: #02181C;
+    color: #84CC16; /* Lime text on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* --- 3D FLIP CARD STYLES (INGENIERÍA ROBUSTA) --- */
+
+/* El contenedor define el espacio 3D */
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+/* El objeto interno que realmente gira */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efecto rebote premium */
+    transform-style: preserve-3d;
+    /* Usamos Grid Stack para que las dos caras ocupen el mismo espacio exacto y el padre calcule la altura automáticamente */
+    display: grid;
+    grid-template-areas: "layer";
+}
+
+/* Estado Girado: Rotamos el contenedor interno */
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Estilos comunes para ambas caras */
+.flip-card-front,
+.flip-card-back {
+    grid-area: layer; /* Ambas caras en la misma celda */
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari support */
+    backface-visibility: hidden;
+    border-radius: 2rem; /* Asegurar bordes redondeados en 3D */
+    transform-style: preserve-3d;
+}
+
+/* Cara Frontal */
+.flip-card-front {
+    transform: rotateY(0deg);
+    z-index: 2;
+}
+
+/* Cara Trasera */
+.flip-card-back {
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+
+/* --- GESTIÓN DE INTERACCIÓN (La clave para que funcione siempre) --- */
+
+/* ESTADO NORMAL (Ver Acertijo) */
+.flip-card:not(.flipped) .flip-card-front {
+    pointer-events: auto; /* Permite clicks */
+}
+.flip-card:not(.flipped) .flip-card-back {
+    pointer-events: none; /* Evita clicks fantasma en la cara oculta */
+}
+
+/* ESTADO GIRADO (Ver Solución) */
+.flip-card.flipped .flip-card-front {
+    pointer-events: none; /* Desactiva el frente */
+}
+.flip-card.flipped .flip-card-back {
+    pointer-events: auto; /* Activa el reverso */
+    z-index: 3; /* Trae visualmente al frente en caso de glitch de renderizado */
+}
+
+/* --- UTILITIES FOR MOBILE AI SECTION --- */
+.synaptic-mobile-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(132, 204, 22, 0.15); /* Accent border */
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.5);
+}
