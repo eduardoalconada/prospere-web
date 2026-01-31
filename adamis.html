@@ -1,0 +1,363 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="GDIWW_SVns3JmGJxlwg-Ly2UMMDm3YNIbcevyjwloyM" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROSPERE | Proyecto Adamis</title>
+    <meta name="description" content="Descubre ADAMIS, el proyecto de educación financiera de PROSPERE para alumnos de 10-12 años.">
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+    <meta name="author" content="PROSPERE">
+    <meta name="theme-color" content="#022C22">
+    <link rel="canonical" href="https://prospere.es/adamis.html">
+    <link rel="alternate" href="https://prospere.es/adamis.html" hreflang="es">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PROSPERE | Proyecto Adamis">
+    <meta property="og:description" content="Proyecto de educación financiera con neuroeducación.">
+    <meta property="og:image" content="https://prospere.es/assets/images/og-prospere.png">
+    <meta property="og:image:alt" content="Logotipo del búho de PROSPERE">
+    <meta property="og:url" content="https://prospere.es/adamis.html">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="PROSPERE">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PROSPERE | Proyecto Adamis">
+    <meta name="twitter:description" content="Proyecto de educación financiera con neuroeducación.">
+    <meta name="twitter:image" content="https://prospere.es/assets/images/og-prospere.png">
+    <meta name="twitter:image:alt" content="Logotipo del búho de PROSPERE">
+    <meta name="twitter:site" content="@PROSPERE">
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        prosper: {
+                            dark: '#022C22',
+                            darker: '#011C16',
+                            accent: '#84CC16',
+                            accentLight: '#BEF264',
+                            accentHover: '#10B981',
+                            cream: '#ECFDF5',
+                            slate: '#064E3B',
+                        }
+                    },
+                    animation: {
+                        blob: "blob 7s infinite",
+                        'fade-in-up': 'fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'shimmer': 'shimmer 2s linear infinite',
+                        'accent-shine': 'accentShine 8s linear infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            "0%": { transform: "translate(0px, 0px) scale(1)" },
+                            "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                            "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+                            "100%": { transform: "translate(0px, 0px) scale(1)" }
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '0 0' },
+                            '100%': { backgroundPosition: '-200% 0' }
+                        },
+                        accentShine: {
+                            '0%': { backgroundPosition: '0% 50%' },
+                            '100%': { backgroundPosition: '200% 50%' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @keyframes ctaPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
+        }
+        :root {
+            --gold-cta-deep: #b67600;        /* base oscura */
+            --gold-cta-start: #d9aa1f;       /* oro intenso */
+            --gold-cta-mid: #f0c84f;         /* brillo medio */
+            --gold-cta-end: #ffe08a;         /* highlight */
+            --gold-cta-spec: rgba(255, 255, 255, 0.32); /* especular */
+            --gold-cta-hover-start: #e7ba28; /* hover más claro */
+            --gold-cta-hover-end: #ffe9a8;   /* highlight hover */
+            --gold-cta-shadow: 0 22px 44px -18px rgba(182, 118, 0, 0.58);
+            --gold-cta-shadow-hover: 0 26px 56px -18px rgba(182, 118, 0, 0.78);
+        }
+        .cta-pulse {
+            animation: ctaPulse 1.6s ease-in-out infinite;
+            box-shadow: 0 18px 38px -16px rgba(132, 204, 22, 0.55);
+            will-change: transform;
+        }
+        .cta-pulse:hover {
+            animation-play-state: paused;
+        }
+        .cta-pulse-gold {
+            animation: ctaPulse 1.6s ease-in-out infinite;
+            background-image:
+                linear-gradient(145deg,
+                    var(--gold-cta-deep) 0%,
+                    var(--gold-cta-start) 20%,
+                    var(--gold-cta-mid) 48%,
+                    var(--gold-cta-end) 70%,
+                    var(--gold-cta-deep) 100%),
+                linear-gradient(180deg, var(--gold-cta-spec) 0%, rgba(255,255,255,0) 42%);
+            color: #1a1200;
+            box-shadow: var(--gold-cta-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            transition: background 220ms ease, box-shadow 220ms ease, transform 220ms ease, filter 220ms ease;
+            background-size: 140% 140%;
+            will-change: transform;
+        }
+        .cta-pulse-gold:hover {
+            animation-play-state: paused;
+            background-image:
+                linear-gradient(145deg,
+                    var(--gold-cta-start) 0%,
+                    var(--gold-cta-hover-start) 28%,
+                    var(--gold-cta-mid) 55%,
+                    var(--gold-cta-hover-end) 78%,
+                    var(--gold-cta-start) 100%),
+                linear-gradient(180deg, var(--gold-cta-spec) 0%, rgba(255,255,255,0) 45%);
+            box-shadow: var(--gold-cta-shadow-hover);
+            transform: translateY(-1px) scale(1.05);
+            filter: saturate(1.1);
+        }
+    </style>
+
+    <!-- Libraries -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+</head>
+
+<body class="bg-gray-50 text-prosper-dark selection:bg-prosper-accent selection:text-prosper-dark">
+    <noscript>
+        <div style="background:#FACC15;color:#0F172A;padding:12px;text-align:center;font-family:Arial, sans-serif;font-size:14px;">
+            Para disfrutar de la experiencia completa activa JavaScript y el CSS del sitio.
+        </div>
+    </noscript>
+
+    <!-- Noise Overlay -->
+    <div class="bg-noise"></div>
+
+    <!-- Header -->
+    <header id="main-header"
+        class="fixed top-0 z-50 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex justify-center pointer-events-none w-full border-b border-transparent">
+        <div id="header-container"
+            class="relative flex items-center justify-between pointer-events-auto transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] bg-transparent w-full py-6 px-8 md:px-12">
+
+            <!-- Logo -->
+            <a href="index.html#inicio" class="nav-link flex items-center gap-3 group relative z-10" data-target="inicio">
+                <div id="logo-icon-container"
+                    class="relative flex items-center justify-center transition-all duration-500 w-14 h-14">
+                    <img id="logo-img" src="assets/images/owl_green.svg" alt="PROSPERE Owl"
+                        class="w-full h-full object-contain group-hover:rotate-[15deg] transition-transform duration-500 ease-out">
+                </div>
+                <div id="logo-text-container"
+                    class="flex flex-col justify-center transition-all duration-500 block md:hidden lg:flex">
+                    <span id="logo-text"
+                        class="font-medium tracking-[0.2em] text-prosper-dark transition-all duration-500 font-serif text-lg leading-none">
+                        PROSPERE
+                    </span>
+                    <span id="logo-subtitle"
+                        class="text-[0.6rem] uppercase tracking-[0.35em] text-prosper-slate transition-colors duration-500 mt-1 leading-none font-bold">
+EDUCACIÓN
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center relative z-10">
+                <ul class="flex items-center gap-8">
+                    <li>
+                        <a href="index.html#inicio" class="nav-link relative group block py-2" data-target="inicio">
+                            <span
+                                class="nav-item-text text-xs uppercase tracking-widest font-medium transition-colors duration-300 text-prosper-dark hover:text-prosper-accent">Inicio</span>
+                            <span
+                                class="absolute bottom-0 left-0 w-full h-px bg-prosper-accent origin-right transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100 group-hover:origin-left"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="adamis.html" class="nav-link relative group block py-2" data-target="proyectos">
+                            <span
+                                class="nav-item-text text-xs uppercase tracking-widest font-medium transition-colors duration-300 text-prosper-dark hover:text-prosper-accent">Proyecto
+                                Adamis</span>
+                            <span
+                                class="absolute bottom-0 left-0 w-full h-px bg-prosper-accent origin-right transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100 group-hover:origin-left"></span>
+                            <span class="absolute -top-1 -right-2 w-1.5 h-1.5 bg-prosper-accent rounded-full"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contacto.html" class="nav-link relative group block py-2" data-target="contacto">
+                            <span
+                                class="nav-item-text text-xs uppercase tracking-widest font-medium transition-colors duration-300 text-prosper-dark hover:text-prosper-accent">Contacto</span>
+                            <span
+                                class="absolute bottom-0 left-0 w-full h-px bg-prosper-accent origin-right transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100 group-hover:origin-left"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu"
+                class="md:hidden relative z-50 text-prosper-dark w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/5 transition-colors"
+                aria-label="Abrir o cerrar el menú de navegación">
+                <div class="relative w-6 h-6">
+                    <i data-lucide="menu" id="icon-menu"
+                        class="absolute inset-0 transform transition-all duration-300 ease-in-out opacity-100 rotate-0 scale-100"></i>
+                    <i data-lucide="x" id="icon-close"
+                        class="absolute inset-0 transform transition-all duration-300 ease-in-out opacity-0 rotate-90 scale-0"></i>
+                </div>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-40 bg-prosper-dark/98 backdrop-blur-3xl flex items-center justify-center transition-all duration-700 cubic-bezier(0.16, 1, 0.3, 1) opacity-0 invisible pointer-events-none">
+        <div
+            class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-prosper-accent/5 via-transparent to-transparent pointer-events-none">
+        </div>
+        <nav class="flex flex-col items-center gap-8 w-full max-w-sm px-6 relative z-10">
+            <a href="index.html#inicio"
+                class="mobile-link text-3xl font-serif italic text-white/90 hover:text-prosper-accent transition-all duration-500 transform translate-y-8 opacity-0 blur-sm"
+                data-target="inicio">Inicio</a>
+            <a href="adamis.html"
+                class="mobile-link text-3xl font-serif italic text-white/90 hover:text-prosper-accent transition-all duration-500 transform translate-y-8 opacity-0 blur-sm"
+                data-target="proyectos">
+                Proyecto ADAMIS
+                <sup class="ml-2 text-xs text-prosper-accent font-sans not-italic font-bold tracking-widest">NEW</sup>
+            </a>
+            <a href="contacto.html"
+                class="mobile-link text-3xl font-serif italic text-white/90 hover:text-prosper-accent transition-all duration-500 transform translate-y-8 opacity-0 blur-sm"
+                data-target="contacto">Contacto</a>
+            <div id="mobile-divider"
+                class="w-12 h-px bg-prosper-accent/30 my-8 transform transition-all duration-700 scale-x-0"></div>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Projects Section (Light Theme) -->
+        <section id="proyectos" data-header-theme="dark"
+            class="scroll-anim py-32 bg-gray-50 relative overflow-hidden text-prosper-dark">
+            <div
+                class="absolute -top-40 -left-40 w-[600px] h-[600px] bg-prosper-accent/5 rounded-full filter blur-[100px] pointer-events-none">
+            </div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="fade-anim text-center mb-16 md:mb-20 transition-all duration-1000 opacity-0 translate-y-10">
+                    <div class="flex flex-wrap items-center justify-center gap-5 md:gap-7 lg:gap-9 max-w-5xl mx-auto">
+                        <h1 class="text-5xl md:text-7xl text-prosper-dark font-light tracking-tight leading-none">Proyecto ADAMIS</h1>
+                        <a href="https://adamis.vercel.app/" target="_blank" class="group inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold tracking-widest uppercase cta-pulse-gold self-center">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                            <span>Ver Adamis</span>
+                        </a>
+                    </div>
+                    <p class="text-gray-500 text-sm font-bold tracking-[0.2em] uppercase mt-5">Educación Financiera para niños de 10 a 12 años</p>
+                </div>
+
+                <div class="space-y-16 md:space-y-24 max-w-6xl mx-auto">
+                    <!-- Video placeholder -->
+                    <div class="fade-anim transition-all duration-1000 opacity-0 translate-y-10">
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/60 bg-gradient-to-br from-prosper-dark via-prosper-slate/80 to-emerald-600/60 aspect-video flex items-center justify-center">
+                            <div class="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(255,255,255,0.12),transparent_45%)]"></div>
+                            <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(132,204,22,0.15),transparent_50%)]"></div>
+                            <div class="relative flex flex-col items-center justify-center gap-4 text-white text-center px-6">
+                                <div class="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur px-3 py-1 text-xs font-semibold tracking-widest uppercase">
+                                    <span class="w-2 h-2 bg-prosper-accent rounded-full animate-pulse"></span>
+                                    Vídeo próximamente
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 1: text left, image right -->
+                    <div class="grid md:grid-cols-2 gap-12 items-center fade-anim transition-all duration-1000 opacity-0 translate-y-10">
+                        <div class="space-y-4">
+                            <p class="text-sm font-bold uppercase tracking-[0.25em] text-prosper-accent">Impacto</p>
+                            <h3 class="text-3xl md:text-4xl font-serif italic text-prosper-dark leading-tight">Más de 200 alumnos ya han probado la app</h3>
+                            <p class="text-prosper-slate/80 text-lg leading-relaxed">Recogemos feedback continuo en aulas reales para iterar y mejorar el producto.</p>
+                        </div>
+                        <div class="relative rounded-3xl overflow-hidden shadow-xl border border-white/60 bg-gray-100 aspect-[4/3]">
+                            <div class="absolute inset-0 bg-gradient-to-br from-prosper-accent/20 via-white to-emerald-500/10 pointer-events-none"></div>
+                            <img src="assets/images/imagen_pedro_antonio.png" alt="Visual de impacto Adamis" class="w-full h-full object-cover relative">
+                        </div>
+                    </div>
+
+                    <!-- Section 2: image left, text right -->
+                    <div class="grid md:grid-cols-2 gap-12 items-center fade-anim transition-all duration-1000 opacity-0 translate-y-10">
+                        <div class="relative rounded-3xl overflow-hidden shadow-xl border border-white/60 bg-gray-100 aspect-[4/3] md:order-1">
+                            <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-white to-prosper-dark/10 pointer-events-none"></div>
+                            <img src="assets/images/imagen_abaco.jpg" alt="Mockup de despliegue Adamis" class="w-full h-full object-cover relative">
+                        </div>
+                        <div class="space-y-4 md:order-2">
+                            <p class="text-sm font-bold uppercase tracking-[0.25em] text-prosper-accent">Despliegue</p>
+                            <h3 class="text-3xl md:text-4xl font-serif italic text-prosper-dark leading-tight">Introduciéndolo en colegios poco a poco</h3>
+                            <p class="text-prosper-slate/80 text-lg leading-relaxed">Actualmente estamos haciendo pilotos en centros, formamos al profesorado y refinamos contenidos de manera continua.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Contact -->
+        <section class="py-14 bg-gradient-to-r from-prosper-dark via-prosper-darker to-prosper-dark text-white">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <p class="text-sm font-bold uppercase tracking-[0.25em] text-prosper-accent mb-1">¿Tienes preguntas?</p>
+                    <h3 class="text-2xl md:text-3xl font-semibold">Hablemos sobre cómo llevar ADAMIS a tu centro</h3>
+                </div>
+                <a href="contacto.html#contacto" class="cta-pulse inline-flex items-center gap-3 px-6 py-3 rounded-full bg-prosper-accent text-prosper-darker font-bold uppercase tracking-widest shadow-[0_18px_40px_-18px_rgba(132,204,22,0.7)] hover:shadow-[0_22px_48px_-16px_rgba(132,204,22,0.85)] hover:-translate-y-0.5 transition-all duration-300">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    <span>Contáctanos</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Light Theme aligned with previous section) -->
+    <footer data-header-theme="dark" class="bg-gray-50 text-prosper-dark py-16 border-t border-gray-200">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-prosper-slate/80">
+            <div class="flex items-center gap-2">
+                <i data-lucide="bird" class="w-4 h-4"></i>
+                <span>© 2026 PROSPERE SOLUCIONES EDUCATIVAS</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="https://x.com/prospere_ed" target="_blank" class="hover:opacity-80 transition-opacity">
+                    <img src="assets/icons/twitter.svg" alt="X (Twitter)" class="w-5 h-5">
+                </a>
+                <a href="https://www.linkedin.com/company/prospere-ed" target="_blank" class="hover:opacity-80 transition-opacity">
+                    <img src="assets/icons/linkedin.svg" alt="LinkedIn" class="w-5 h-5">
+                </a>
+                <a href="legal/aviso-legal.html" class="hover:text-prosper-dark transition-colors">Aviso Legal</a>
+                <a href="legal/politica-privacidad.html" class="hover:text-prosper-dark transition-colors">Privacidad</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Logic -->
+    <script src="script.js" defer></script>
+</body>
+</html>
+
+
+

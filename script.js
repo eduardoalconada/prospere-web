@@ -440,6 +440,63 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // --- CONTACT FORM (uses same Formspree endpoint) ---
+    const contactForm = document.getElementById('contact-form');
+    const contactSubmit = document.getElementById('contact-submit');
+    const contactIcon = document.getElementById('contact-btn-icon');
+    const contactBtnText = document.getElementById('contact-btn-text');
+    const contactFeedback = document.getElementById('contact-feedback');
+    if (contactForm && contactSubmit && contactIcon) {
+        const contactDefaultClasses = contactSubmit.className;
+        const resetContactButton = () => {
+            contactSubmit.className = contactDefaultClasses;
+            contactIcon.className = 'w-4 h-4';
+            contactIcon.classList.remove('animate-spin');
+            contactIcon.setAttribute('data-lucide', 'send');
+            if (contactBtnText) contactBtnText.textContent = 'Enviar mensaje';
+            contactSubmit.disabled = false;
+            lucide.createIcons();
+        };
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (contactSubmit.disabled) return;
+
+            contactIcon.setAttribute('data-lucide', 'loader-2');
+            contactIcon.classList.add('animate-spin');
+            if (contactBtnText) contactBtnText.textContent = 'Enviando...';
+            contactSubmit.disabled = true;
+            lucide.createIcons();
+            if (contactFeedback) contactFeedback.textContent = '';
+
+            try {
+                const data = new FormData(contactForm);
+                const res = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: { Accept: 'application/json' }
+                });
+
+                contactIcon.classList.remove('animate-spin');
+                contactForm.reset();
+                if (contactFeedback) {
+                    contactFeedback.textContent = res.ok
+                        ? '¡Gracias! Hemos recibido tu mensaje.'
+                        : 'No se pudo enviar. Inténtalo de nuevo en un momento.';
+                }
+
+                // Restore button to original state immediately
+                resetContactButton();
+            } catch (err) {
+                contactIcon.classList.remove('animate-spin');
+                contactIcon.setAttribute('data-lucide', 'alert-circle');
+                contactSubmit.disabled = false;
+                lucide.createIcons();
+                if (contactFeedback) contactFeedback.textContent = 'Error de conexión. Revisa tu red y vuelve a intentar.';
+                if (contactBtnText) contactBtnText.textContent = 'Enviar mensaje';
+            }
+        });
+    }
 });
 
 // --- SYNAPTIC WEB LOGIC ---

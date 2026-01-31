@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROSPERE | Contacto</title>
+    <meta name="description" content="Contacta con PROSPERE para colaborar en proyectos educativos basados en neuroeducación.">
+    <meta name="theme-color" content="#022C22">
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        prosper: {
+                            dark: '#022C22',
+                            accent: '#84CC16',
+                            cream: '#ECFDF5',
+                            slate: '#064E3B',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+</head>
+
+<body class="bg-prosper-dark text-white selection:bg-prosper-accent selection:text-prosper-dark">
+    <!-- Header -->
+    <header id="main-header"
+        class="fixed top-0 z-50 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex justify-center pointer-events-none w-full border-b border-transparent">
+        <div id="header-container"
+            class="relative flex items-center justify-between pointer-events-auto transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] bg-transparent w-full py-6 px-8 md:px-12">
+            <a href="index.html#inicio" class="nav-link flex items-center gap-3 group relative z-10" data-target="inicio">
+                <div id="logo-icon-container"
+                    class="relative flex items-center justify-center transition-all duration-500 w-14 h-14">
+                    <img id="logo-img" src="assets/images/owl_white.svg" alt="PROSPERE Owl"
+                        class="w-full h-full object-contain group-hover:rotate-[15deg] transition-transform duration-500 ease-out">
+                </div>
+                <div id="logo-text-container"
+                    class="flex flex-col justify-center transition-all duration-500 block md:hidden lg:flex">
+                    <span id="logo-text"
+                        class="font-medium tracking-[0.2em] text-white transition-all duration-500 font-serif text-lg leading-none">
+                        PROSPERE
+                    </span>
+                    <span id="logo-subtitle"
+                        class="text-[0.6rem] uppercase tracking-[0.35em] text-prosper-accent transition-colors duration-500 mt-1 leading-none font-bold">
+                        EDUCACIÓN
+                    </span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center relative z-10">
+                <ul class="flex items-center gap-8">
+                    <li><a href="index.html#inicio" class="nav-item-text text-xs uppercase tracking-widest font-medium text-gray-300 hover:text-white">Inicio</a></li>
+                    <li><a href="adamis.html" class="nav-item-text text-xs uppercase tracking-widest font-medium text-gray-300 hover:text-white">Proyecto Adamis</a></li>
+                    <li><a href="contacto.html" class="nav-item-text text-xs uppercase tracking-widest font-medium text-gray-300 hover:text-white">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu"
+                class="md:hidden relative z-50 text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5 transition-colors"
+                aria-label="Abrir o cerrar el menú de navegación">
+                <div class="relative w-6 h-6">
+                    <i data-lucide="menu" id="icon-menu"
+                        class="absolute inset-0 transform transition-all duration-300 ease-in-out opacity-100 rotate-0 scale-100"></i>
+                    <i data-lucide="x" id="icon-close"
+                        class="absolute inset-0 transform transition-all duration-300 ease-in-out opacity-0 rotate-90 scale-0"></i>
+                </div>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-40 bg-prosper-dark/98 backdrop-blur-3xl flex items-center justify-center transition-all duration-700 cubic-bezier(0.16, 1, 0.3, 1) opacity-0 invisible pointer-events-none">
+        <div
+            class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-prosper-accent/5 via-transparent to-transparent pointer-events-none">
+        </div>
+        <nav class="flex flex-col items-center gap-8 w-full max-w-sm px-6 relative z-10">
+            <a href="index.html#inicio"
+                class="mobile-link text-3xl font-serif italic text-white/90 hover:text-prosper-accent transition-all duration-500 transform translate-y-8 opacity-0 blur-sm"
+                data-target="inicio">Inicio</a>
+            <a href="adamis.html"
+                class="mobile-link text-3xl font-serif italic text-white/90 hover:text-prosper-accent transition-all duration-500 transform translate-y-8 opacity-0 blur-sm"
+                data-target="proyectos">
+                Proyecto Adamis
+                <sup class="ml-2 text-xs text-prosper-accent font-sans not-italic font-bold tracking-widest">NEW</sup>
+            </a>
+            <a href="contacto.html"
+                class="mobile-link text-3xl font-serif italic text-white/90 hover:text-prosper-accent transition-all duration-500 transform translate-y-8 opacity-0 blur-sm"
+                data-target="contacto">Contacto</a>
+            <div id="mobile-divider"
+                class="w-12 h-px bg-prosper-accent/30 my-8 transform transition-all duration-700 scale-x-0"></div>
+        </nav>
+    </div>
+
+    <main class="pt-24 md:pt-28">
+        <!-- Hero Contact -->
+        <section data-header-theme="light" class="py-16 md:py-24 bg-prosper-dark text-white">
+            <div class="container mx-auto px-6 text-center max-w-5xl">
+                <p class="text-sm font-bold uppercase tracking-[0.35em] text-prosper-accent mb-4">Hablemos</p>
+                <h1 class="text-4xl md:text-5xl font-light leading-tight mb-4">
+                    Hablemos de tus proyectos <span class="font-bold text-prosper-accent">educativos</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 font-normal max-w-3xl mx-auto">
+                    Estamos aquí para responder tus preguntas y mostrarte cómo PROSPERE puede ayudar a tu centro, aula o familia.
+                </p>
+            </div>
+        </section>
+
+        <!-- Info cards -->
+        <section class="py-10 bg-prosper-dark">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-[#E6EBE4] rounded-2xl border border-[#d5ddce] shadow-sm p-6 text-center">
+                        <div class="mx-auto mb-3 w-11 h-11 rounded-full bg-prosper-accent/15 flex items-center justify-center text-prosper-dark">
+                            <i data-lucide="calendar" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-prosper-dark mb-1">Agenda una demo</h3>
+                        <p class="text-prosper-slate/80 text-sm mb-4">Coordinemos disponibilidad</p>
+                        <a
+                            href="https://calendly.com/alexjimenezvalero/30min?back=1&month=2026-01"
+                            class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-prosper-dark text-white text-sm font-semibold hover:bg-prosper-accent hover:text-prosper-dark transition-colors shadow-sm"
+                            target="_blank" rel="noreferrer">
+                            Ver disponibilidad
+                        </a>
+                    </div>
+                    <div class="bg-[#E6EBE4] rounded-2xl border border-[#d5ddce] shadow-sm p-6 text-center">
+                        <div class="mx-auto mb-3 w-11 h-11 rounded-full bg-prosper-accent/15 flex items-center justify-center text-prosper-dark">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-prosper-dark mb-1">Email</h3>
+                        <a href="mailto:contacto@prospere.es" class="text-prosper-dark font-semibold text-sm hover:text-prosper-accent transition-colors">contacto@prospere.es</a>
+                    </div>
+                    <div class="bg-[#E6EBE4] rounded-2xl border border-[#d5ddce] shadow-sm p-6 text-center">
+                        <div class="mx-auto mb-3 w-11 h-11 rounded-full bg-prosper-accent/15 flex items-center justify-center text-prosper-dark">
+                            <i data-lucide="map-pin" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-prosper-dark mb-1">Ubicación</h3>
+                        <p class="text-prosper-slate/80 text-sm">España · Colaboramos en remoto</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form -->
+        <section class="pb-24 bg-prosper-dark">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="bg-[#E6EBE4] rounded-3xl shadow-xl border border-[#d5ddce] p-6 md:p-10">
+                    <h2 class="text-2xl md:text-3xl font-semibold text-prosper-dark text-center mb-8">Envíanos un mensaje</h2>
+                    <form id="contact-form" action="https://formspree.io/f/xeozbrea" method="POST" class="space-y-5" novalidate>
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-prosper-slate mb-2">Nombre *</label>
+                            <input id="name" name="name" required type="text" placeholder="Tu nombre"
+                                class="w-full rounded-xl border border-[#d5ddce] bg-[#E6EBE4] focus:bg-white focus:outline-none focus:ring-2 focus:ring-prosper-accent/60 focus:border-transparent px-4 py-3 text-prosper-dark placeholder:text-gray-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-prosper-slate mb-2">Email *</label>
+                            <input id="email" name="email" required type="email" placeholder="tu@email.com"
+                                class="w-full rounded-xl border border-[#d5ddce] bg-[#E6EBE4] focus:bg-white focus:outline-none focus:ring-2 focus:ring-prosper-accent/60 focus:border-transparent px-4 py-3 text-prosper-dark placeholder:text-gray-500">
+                        </div>
+                        <div>
+                            <label for="role" class="block text-sm font-medium text-prosper-slate mb-2">Centro / Empresa (opcional)</label>
+                            <input id="role" name="role" type="text" placeholder="Colegio, instituto o familia"
+                                class="w-full rounded-xl border border-[#d5ddce] bg-[#E6EBE4] focus:bg-white focus:outline-none focus:ring-2 focus:ring-prosper-accent/60 focus:border-transparent px-4 py-3 text-prosper-dark placeholder:text-gray-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-prosper-slate mb-2">Mensaje *</label>
+                            <textarea id="message" name="message" required rows="4" placeholder="Cuéntanos qué necesitas..."
+                                class="w-full rounded-xl border border-[#d5ddce] bg-[#E6EBE4] focus:bg-white focus:outline-none focus:ring-2 focus:ring-prosper-accent/60 focus:border-transparent px-4 py-3 text-prosper-dark placeholder:text-gray-500"></textarea>
+                        </div>
+                        <input type="hidden" name="_subject" value="Nuevo contacto desde la landing PROSPERE">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true">
+                        <div class="flex items-center justify-between text-xs text-prosper-slate/80">
+                            <span>Responderemos en menos de 24 horas.</span>
+                            <a href="legal/politica-privacidad.html" class="text-prosper-accent font-semibold hover:text-prosper-dark">Privacidad</a>
+                        </div>
+                        <p id="contact-feedback" class="text-center text-xs text-prosper-slate/80 min-h-[1.5rem]" aria-live="polite"></p>
+                        <button type="submit" id="contact-submit"
+                            class="w-full mt-1 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-prosper-accent via-prosper-accentHover to-prosper-accent text-prosper-darker font-semibold py-3 shadow-[0_18px_45px_-14px_rgba(132,204,22,0.5)] hover:shadow-[0_22px_55px_-12px_rgba(132,204,22,0.65)] transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-prosper-accent/60">
+                            <i data-lucide="send" class="w-4 h-4" id="contact-btn-icon"></i>
+                            <span id="contact-btn-text">Enviar mensaje</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer data-header-theme="light" class="bg-prosper-dark text-white py-16 border-t border-gray-600">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
+            <div class="flex items-center gap-2">
+                <i data-lucide="bird" class="w-4 h-4"></i>
+                <span>© 2026 PROSPERE SOLUCIONES EDUCATIVAS</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="https://x.com/prospere_ed" target="_blank" class="hover:opacity-80 transition-opacity">
+                    <img src="assets/icons/twitter.svg" alt="X (Twitter)" class="w-5 h-5">
+                </a>
+                <a href="https://www.linkedin.com/company/prospere-ed" target="_blank" class="hover:opacity-80 transition-opacity">
+                    <img src="assets/icons/linkedin.svg" alt="LinkedIn" class="w-5 h-5">
+                </a>
+                <a href="legal/aviso-legal.html" class="hover:text-white transition-colors">Aviso Legal</a>
+                <a href="legal/politica-privacidad.html" class="hover:text-white transition-colors">Privacidad</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
+
+
+

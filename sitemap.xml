@@ -2,15 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://prospere.es/</loc>
-    <lastmod>2025-11-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
+  </url>
+  <url>
+    <loc>https://prospere.es/adamis.html</loc>
+    <lastmod>2026-01-30</lastmod>
+  </url>
+  <url>
+    <loc>https://prospere.es/contacto.html</loc>
+    <lastmod>2026-01-30</lastmod>
   </url>
   <url>
     <loc>https://prospere.es/legal/aviso-legal.html</loc>
-    <lastmod>2025-11-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
   </url>
   <url>
     <loc>https://prospere.es/legal/politica-privacidad.html</loc>
-    <lastmod>2025-11-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
   </url>
 </urlset>
 
