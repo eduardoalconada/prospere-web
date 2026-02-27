@@ -142,6 +142,120 @@
             transform: translateY(-1px) scale(1.05);
             filter: saturate(1.1);
         }
+        @keyframes partnerMarquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        .partner-marquee {
+            position: relative;
+            overflow: hidden;
+            -webkit-mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent);
+        }
+        .partner-marquee-shell {
+            background: #ffffff;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            border-radius: 24px;
+            padding: clamp(1.1rem, 2.4vw, 1.6rem) 0.35rem;
+            box-shadow: 0 14px 34px -26px rgba(15, 23, 42, 0.35);
+            overflow: hidden;
+            width: min(100%, 940px);
+            margin-inline: auto;
+        }
+        .partner-track {
+            display: flex;
+            width: max-content;
+            animation: partnerMarquee 20s linear infinite;
+            will-change: transform;
+        }
+        @media (max-width: 768px) {
+            .partner-marquee-shell {
+                width: 100%;
+            }
+        }
+        .partner-marquee:hover .partner-track {
+            animation-play-state: paused;
+        }
+        .partner-item {
+            position: relative;
+            overflow: clip;
+            width: clamp(200px, 27vw, 290px);
+            height: clamp(96px, 11.5vw, 118px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            background: #ffffff;
+            box-shadow: 0 8px 20px -20px rgba(15, 23, 42, 0.45);
+            padding: 0.85rem 1.05rem 1.8rem;
+            margin-right: clamp(0.75rem, 1.8vw, 1.1rem);
+            flex-shrink: 0;
+            text-decoration: none;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .partner-item::-webkit-scrollbar {
+            display: none;
+        }
+        .partner-item img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+            object-position: center;
+            filter: none;
+            opacity: 1;
+            transition: opacity 220ms ease;
+            overflow: hidden;
+        }
+        .partner-item:hover img {
+            opacity: 1;
+        }
+        .partner-item:focus-visible {
+            outline: 2px solid #84CC16;
+            outline-offset: 2px;
+        }
+        .partner-name {
+            position: absolute;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+            border-radius: 999px;
+            padding: 0.25rem 0.6rem;
+            text-align: center;
+            font-size: 0.66rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #022C22;
+            background: rgba(248, 250, 252, 0.96);
+            box-shadow: 0 8px 22px -15px rgba(15, 23, 42, 0.35);
+            transform: translateY(8px);
+            opacity: 0;
+            transition: opacity 220ms ease, transform 220ms ease;
+            pointer-events: none;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .partner-item:hover .partner-name:not(:empty),
+        .partner-item:focus-visible .partner-name:not(:empty) {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .partner-name:empty {
+            display: none;
+        }
+        .partner-marquee,
+        .partner-marquee-shell {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .partner-marquee::-webkit-scrollbar,
+        .partner-marquee-shell::-webkit-scrollbar {
+            display: none;
+        }
     </style>
 
     <!-- Libraries -->
@@ -277,13 +391,13 @@
             <div class="container mx-auto px-6 relative z-10">
                 <div class="fade-anim text-center mb-16 md:mb-20 transition-all duration-1000 opacity-0 translate-y-10">
                     <div class="flex flex-wrap items-center justify-center gap-5 md:gap-7 lg:gap-9 max-w-5xl mx-auto">
-                        <h1 class="text-5xl md:text-7xl text-prosper-dark font-light tracking-tight leading-none">Proyecto ADAMIS</h1>
+                        <h1 class="text-5xl md:text-7xl text-prosper-dark font-light tracking-tight leading-none">ADAMIS en acción</h1>
                         <a href="https://adamis.vercel.app/" target="_blank" class="group inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold tracking-widest uppercase cta-pulse-gold self-center">
                             <i data-lucide="external-link" class="w-4 h-4"></i>
-                            <span>Ver Adamis</span>
+                            <span>Ver demo ADAMIS</span>
                         </a>
                     </div>
-                    <p class="text-gray-500 text-base md:text-lg font-bold tracking-[0.2em] uppercase mt-5">Educación Financiera para niños de 10 a 12 años</p>
+                    <p class="text-gray-500 text-base md:text-lg font-bold tracking-[0.2em] uppercase mt-5">Educación financiera práctica para 5º y 6º de Primaria</p>
                 </div>
 
                 <div class="space-y-16 md:space-y-24 max-w-6xl mx-auto">
@@ -295,7 +409,7 @@
                             <div class="relative flex flex-col items-center justify-center gap-4 text-white text-center px-6">
                                 <div class="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur px-3 py-1 text-xs font-semibold tracking-widest uppercase">
                                     <span class="w-2 h-2 bg-prosper-accent rounded-full animate-pulse"></span>
-                                    Vídeo próximamente
+                                    Vídeo Proximamente...
                                 </div>
                             </div>
                         </div>
@@ -305,8 +419,8 @@
                     <div class="grid md:grid-cols-2 gap-12 items-center fade-anim transition-all duration-1000 opacity-0 translate-y-10">
                         <div class="space-y-4">
                             <p class="text-sm font-bold uppercase tracking-[0.25em] text-prosper-accent">Impacto</p>
-                            <h3 class="text-3xl md:text-4xl font-serif italic text-prosper-dark leading-tight">Más de 200 alumnos ya han probado la app</h3>
-                            <p class="text-prosper-slate/80 text-lg leading-relaxed">Recogemos feedback continuo en aulas reales para iterar y mejorar el producto.</p>
+                            <h3 class="text-3xl md:text-4xl font-serif italic text-prosper-dark leading-tight">Más de 300 alumnos ya han aprendido con ADAMIS</h3>
+                            <p class="text-prosper-slate/80 text-lg leading-relaxed">Medimos indicadores en cada sesión y mejoramos continuamente el producto con feedback real de profesorado y alumnado.</p>
                         </div>
                         <div class="relative rounded-3xl overflow-hidden shadow-xl border border-white/60 bg-gray-100 aspect-[4/3]">
                             <div class="absolute inset-0 bg-gradient-to-br from-prosper-accent/20 via-white to-emerald-500/10 pointer-events-none"></div>
@@ -322,8 +436,62 @@
                         </div>
                         <div class="space-y-4 md:order-2">
                             <p class="text-sm font-bold uppercase tracking-[0.25em] text-prosper-accent">Despliegue</p>
-                            <h3 class="text-3xl md:text-4xl font-serif italic text-prosper-dark leading-tight">Introduciéndolo en colegios poco a poco</h3>
-                            <p class="text-prosper-slate/80 text-lg leading-relaxed">Actualmente estamos haciendo pilotos en centros, formamos al profesorado y refinamos contenidos de manera continua.</p>
+                            <h3 class="text-3xl md:text-4xl font-serif italic text-prosper-dark leading-tight">Cada vez más centros se suman</h3>
+                            <p class="text-prosper-slate/80 text-lg leading-relaxed">Acompañamos la integración de principio a fin: pilotos, formación docente y seguimiento para que el programa funcione desde el primer día.</p>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: text left, image right (nuevo bloque) -->
+                    <div class="grid md:grid-cols-2 gap-12 items-center fade-anim transition-all duration-1000 opacity-0 translate-y-10">
+                        <div class="space-y-4 md:order-1">
+                            <p class="text-sm font-bold uppercase tracking-[0.25em] text-prosper-accent">Curso 2026-2027</p>
+                            <h3 class="text-3xl md:text-4xl font-serif italic text-prosper-dark leading-tight">El próximo curso, escalamos contigo</h3>
+                            <p class="text-prosper-slate/80 text-lg leading-relaxed">La versión completa del producto se lanza el próximo curso. Este es el momento de asegurar la implantación de ADAMIS y posicionar tu centro un paso por delante.</p>
+                        </div>
+                        <div class="relative rounded-3xl overflow-hidden shadow-xl border border-white/60 bg-gray-100 aspect-[4/3] md:order-2">
+                            <div class="absolute inset-0 bg-gradient-to-br from-prosper-dark/10 via-white to-prosper-accent/10 pointer-events-none"></div>
+                            <img src="assets/images/imagen-arcangel.jpg" alt="Nueva imagen del proyecto Adamis" class="w-full h-full object-cover relative">
+                        </div>
+                    </div>
+
+                    <!-- Logos carousel -->
+                    <div class="fade-anim transition-all duration-1000 opacity-0 translate-y-10">
+                        <div class="text-center mb-8">
+                            <p class="text-sm font-bold uppercase tracking-[0.25em] text-prosper-accent">Centros colaboradores</p>
+                            <h3 class="mt-3 text-2xl md:text-3xl font-serif italic text-prosper-dark">Colegios que ya confían en ADAMIS</h3>
+                        </div>
+
+                        <div class="partner-marquee-shell">
+                            <div class="partner-marquee py-1.5" aria-label="Carrusel de logos de colegios colaboradores">
+                                <div class="partner-track">
+                                    <!-- Grupo 1: añade href y nombre del colegio manualmente -->
+                                    <a class="partner-item" href="https://colegio-abaco.com/" target="_blank" rel="noopener noreferrer">
+                                        <img src="assets/images/colegio_abaco.jpg" alt="" loading="lazy" decoding="async">
+                                        <span class="partner-name">Colegio Ábaco</span>
+                                    </a>
+                                    <a class="partner-item" href="https://colegio-arcangel.com/" target="_blank" rel="noopener noreferrer">
+                                        <img src="assets/images/colegio-arcangel.jpg" alt="Logo colegio colaborador 2" loading="lazy" decoding="async">
+                                        <span class="partner-name">Colegio Arcángel</span>
+                                    </a>
+                                    <a class="partner-item" href="https://www.educa2.madrid.org/web/centro.cp.alarcon.valdemoro" target="_blank" rel="noopener noreferrer">
+                                        <img src="assets/images/educamadrid.jpg" alt="" loading="lazy" decoding="async">
+                                        <span class="partner-name">Colegio Pedro Antonio de Alarcón</span>
+                                    </a>
+                                    <!-- Grupo 2 duplicado para bucle infinito -->
+                                    <a class="partner-item" href="https://colegio-abaco.com/" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+                                        <img src="assets/images/colegio_abaco.jpg" alt="" loading="lazy" decoding="async">
+                                        <span class="partner-name">Colegio Ábaco</span>
+                                    </a>
+                                    <a class="partner-item" href="https://colegio-arcangel.com/" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+                                        <img src="assets/images/colegio-arcangel.jpg" alt="" loading="lazy" decoding="async">
+                                        <span class="partner-name">Colegio Arcángel</span>
+                                    </a>
+                                    <a class="partner-item" href="https://www.educa2.madrid.org/web/centro.cp.alarcon.valdemoro" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+                                        <img src="assets/images/educamadrid.jpg" alt="" loading="lazy" decoding="async">
+                                        <span class="partner-name">Colegio Pedro Antonio de Alarcón</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -334,12 +502,12 @@
         <section class="py-14 bg-gradient-to-r from-prosper-dark via-prosper-darker to-prosper-dark text-white">
             <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
-                    <p class="text-sm font-bold uppercase tracking-[0.25em] text-prosper-accent mb-1">¿Tienes preguntas?</p>
-                    <h3 class="text-2xl md:text-3xl font-semibold">Hablemos sobre cómo llevar ADAMIS a tu centro</h3>
+                    <p class="text-sm font-bold uppercase tracking-[0.25em] text-prosper-accent mb-1">Siguiente paso</p>
+                    <h3 class="text-2xl md:text-3xl font-semibold">Agenda una conversación y evalúa ADAMIS para tu centro</h3>
                 </div>
                 <a href="contacto.html#contacto" class="cta-pulse inline-flex items-center gap-3 px-6 py-3 rounded-full bg-prosper-accent text-prosper-darker font-bold uppercase tracking-widest shadow-[0_18px_40px_-18px_rgba(132,204,22,0.7)] hover:shadow-[0_22px_48px_-16px_rgba(132,204,22,0.85)] hover:-translate-y-0.5 transition-all duration-300">
                     <i data-lucide="mail" class="w-4 h-4"></i>
-                    <span>Contáctanos</span>
+                    <span>Quiero implantar ADAMIS</span>
                 </a>
             </div>
         </section>
