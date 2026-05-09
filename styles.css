@@ -348,3 +348,64 @@ body {
     backdrop-filter: blur(12px);
     box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.5);
 }
+
+.adamis-cta {
+    display: inline-flex;
+    align-items: stretch;
+    overflow: hidden;
+    position: relative;
+    isolation: isolate;
+    border-radius: 999px;
+    color: #02181C;
+    background: linear-gradient(135deg, #BEF264 0%, #84CC16 46%, #10B981 100%);
+    border: 1px solid rgba(132, 204, 22, 0.45);
+    box-shadow: 0 16px 36px -18px rgba(16, 185, 129, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease, filter 0.3s ease, opacity 0.5s ease;
+}
+
+.adamis-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.28), transparent 58%);
+    opacity: 0.7;
+}
+
+.adamis-cta:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.04);
+    box-shadow: 0 20px 42px -18px rgba(16, 185, 129, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.adamis-cta:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(132, 204, 22, 0.35), 0 18px 40px -18px rgba(16, 185, 129, 0.9);
+}
+
+.adamis-cta__text {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.adamis-cta__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid rgba(2, 44, 34, 0.18);
+    background: rgba(2, 44, 34, 0.08);
+}
+
+.adamis-cta--nav .adamis-cta__text {
+    padding: 0.72rem 1.05rem;
+    font-size: 0.875rem;
+    line-height: 1;
+}
+
+.adamis-cta--nav .adamis-cta__icon {
+    padding: 0 0.8rem;
+}
